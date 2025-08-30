@@ -57,11 +57,41 @@ describe('Formulário de Consukltori', () => {
         })
 
         cy.get('input[type="file"]')
-            .selectFile('./cypress/fixtures/Planta Baixa.pdf', {force: true})
+            .selectFile('./cypress/fixtures/Planta Baixa.pdf', { force: true })
 
         cy.get('textarea[placeholder="Descreva mais detalhes sobre sua necessidade"]')
-        .type('Textão')
-        
+            .type('Textão')
+
+
+        const techs = [
+            'Cypress',
+            'Selenium',
+            'WebDriverIO',
+            'Playwright',
+            'Robot Framework'
+        ]
+
+        techs.forEach((tech) => {
+            cy.get('input[placeholder="Digite uma tecnologia e pressione Enter"]')
+                .type(tech)
+                .type('{enter}')
+
+            cy.contains('label', 'Tecnologias')
+                .parent()
+                .contains('span', tech)
+                .should('be.visible')
+        })
+
+        cy.contains('label', 'termos de uso')
+            .find('input')
+            .check()
+            .should('be.checked')
+
+        cy.contains('button', 'Enviar formulário')
+            .click();
+
+        cy.contains('Sua solicitação de consultoria foi enviada com sucesso! Em breve, nossa equipe entrará em contato através do email fornecido.')
+            .should('be.visible')
 
     })
 })
