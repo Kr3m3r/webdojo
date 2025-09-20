@@ -1,10 +1,12 @@
 describe('iFrame', () => {
     it('deve poder tocar o video', () => {
 
-        cy.start()
-        cy.submitLoginForm('papito@webdojo.com', 'katana123')
+        cy.login(true)
 
         cy.contains('Video').click()
+
+        //think time
+        cy.wait(3000)//espera para garantir que o iframe vai carregar
 
         cy.get('iframe[title="Video Player"]') //obtém a tag do iframe
             .should('exist')                       //verifica se existe

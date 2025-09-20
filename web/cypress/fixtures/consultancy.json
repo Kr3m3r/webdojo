@@ -1,0 +1,27 @@
+{
+  "personal": {
+    "name": "Fernando Papito",
+    "email": "diegok86@gmail.com",
+    "phone": "51 99875-6540",
+    "consultancyType": "Individual",
+    "personType": "cpf",
+    "document": "01512967076",
+    "discoveryChannels": [
+      "Instagram",
+      "LinkedIn",
+      "Udemy",
+      "YouTube",
+      "Indicação de Amigo"
+    ],
+    "file": "./cypress/fixtures/Planta Baixa.pdf",
+    "description": "Textão",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "WebDriverIO",
+      "Playwright",
+      "Robot Framework"
+    ],
+    "terms": true
+  }
+}
