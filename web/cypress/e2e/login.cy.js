@@ -2,7 +2,7 @@ import { getCurrentDate } from "../support/utils.cy"
 
 describe('Login', () =>{
 
-  it.only('Deve logar com sucesso', ()=>{
+  it('Deve logar com sucesso', ()=>{
 
     cy.start()
     //cy.viewport('iphone-xr') //simular responsividade na resolução Mobile.
